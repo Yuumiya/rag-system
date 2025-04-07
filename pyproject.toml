@@ -1,0 +1,34 @@
+[project]
+name = "rag-system"
+version = "0.1.0"
+description = "Retrieval augmented generation pipeline with enhancements"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "faiss-cpu>=1.7.2",
+    "openai>=0.27.0",
+    "tqdm>=4.62.3",
+    "pathlib>=1.0.0",
+]
+
+[dependency-groups]
+dev = ["pytest>=6.0", "plotly>=6.0.1"]
+lint = ["ruff", "pyright"]
+
+[tool.uv]
+default-groups = ["dev", "lint"]
+
+[tool.ruff]
+preview = true
+line-length = 120
+
+[tool.ruff.lint]
+extend-select = ["E", "F", "UP", "B", "SIM", "I"]
+ignore = ["E501"]
+
+[project.scripts]
+holonomy = "holonomy:main"
+
+[build-system]
+requires = ["flit-core>=3.4,<4"]
+build-backend = "flit_core.buildapi"
