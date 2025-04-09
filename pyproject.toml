@@ -26,9 +26,6 @@ line-length = 120
 extend-select = ["E", "F", "UP", "B", "SIM", "I"]
 ignore = ["E501"]
 
-[project.scripts]
-holonomy = "holonomy:main"
-
 [build-system]
 requires = ["flit-core>=3.4,<4"]
 build-backend = "flit_core.buildapi"
