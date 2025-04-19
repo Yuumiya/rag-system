@@ -83,18 +83,3 @@ example:
 The current pipeline achieved the values of
 - `Recall@10: 0.6471`
 - `MRR@10: 0.4281`
-
-on a current pipeline.
-
-## Reflection and thoughts
-Based on results on a test question set would say that baseline is decent. However, the enhancements I made on it haven't quite improved it.
-
-Reranker I made didn't make a difference, which is quite surprising, because even when I gave reranker more than 10 chunks, it still got the same metrics.
-In order to improve the results one can run reranker on a larger chunk list, but this is some kind of cheating because it is no longer a true Recall@10.
-
-I haven't considered alternatives to FAISS and other tools, because I decided that the scope of the task is to improve algorithm, not compare different tools (although, it is definitely a way of trying to improve results).
-
-To try and make it easier for the retriever to find relevant chunks, I added the filenames in the beginning. It did help, but the difference is barely noticeable. 
-
-The generator itself looks good. It performs as expected and explains the concepts it is asked to describe. In order to measure it, however, it would be better to use some library that measures the quality of responses.
-Also, in order to prevent LLM from hallucinating, the good idea is to ask it to provide sources (exact chunks/filenames) to its answers (this is also out of scope, but definitely one of the ways to make improvements).
